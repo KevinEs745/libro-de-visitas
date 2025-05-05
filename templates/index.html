@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Proyecto de Transformación Digital</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="card">
+        <h1>🚀 Proyecto de Transformación Digital</h1>
+        <p>
+            Esta aplicación es parte de un proyecto académico en el que aprendimos a desplegar apps web en la nube usando <strong>Python (Flask)</strong> y la plataforma <strong>Render</strong>.
+        </p>
+        <p>
+            El objetivo es demostrar cómo una app sencilla puede estar disponible globalmente en minutos, como parte del enfoque de Transformación Digital en las organizaciones.
+        </p>
+
+        <h2>👨‍💻 <span style="color:green">Equipo de desarrollo:</span></h2>
+        <ul>
+            <li>Ernesto Sevilla</li>
+            <li>Kevin Eslava</li>
+            <li>Juan Tapia</li>
+            <li>Paul Vargas</li>
+        </ul>
+
+        <p style="color:green">✅ ¡Gracias por visitar nuestra aplicación y ser parte del cambio digital! 🌍</p>
+    </div>
+
+    <div class="card">
+        <h2>📖 Libro de visitas</h2>
+        <form method="POST">
+            <input type="text" name="nombre" placeholder="Tu nombre" required>
+            <textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+
+        <h3>📝 Mensajes recibidos:</h3>
+        <ul>
+            {% for msg in mensajes %}
+                <li><strong>{{ msg.nombre }}</strong>: {{ msg.mensaje }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
